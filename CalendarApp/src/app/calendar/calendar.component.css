@@ -1,0 +1,107 @@
+.container-fluid {
+    padding: 20px;
+  }
+  
+  .task-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .task-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .task-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .task-body {
+    padding: 10px;
+  }
+  
+  .task-footer {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .action-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .action-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .empty-message {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  .task-form {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+
+  }
+  
+  .add-button {
+    color: white;
+    background-color: #007bff;
+  }
+  
+  .add-button:hover {
+    background-color: #0056b3;
+  }
+  
+  form{
+    margin-bottom: 50px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .task-item {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .task-item {
+      width: calc(100% - 20px);
+    }
+  }
+  

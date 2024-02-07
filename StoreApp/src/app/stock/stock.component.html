@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <div>
+            <h2>Tabla de productos</h2>
+            <table *ngIf="products.length > 0" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Descripición</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td scope="col">{{product.code}}</td>
+                        <td scope="col">{{product.description}}</td>
+                        <td scope="col">{{product.quantity}}</td>
+                        <td scope="col">{{product.price}}</td>
+                        <td scope="col">
+                            <button class="btn btn-primary" (click)="selectProduct(product)">Seleccionar</button>
+                            <button class="btn btn-danger" (click)="deleteProduct(product)">Borrar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 *ngIf="products.length === 0"> Vacío</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div style="max-width: fit-content; border: 2px solid #c5c5c5; padding: 10px;">
+                <form>
+                    <p>Ingrese el código <input type="text" name="code" [(ngModel)]="product.code"></p>
+                    <p>Ingrese la descripción <input type="text" name="description" [(ngModel)]="product.description"></p>
+                    <p>Ingrese la cantidad <input type="number" name="quantity" [(ngModel)]="product.quantity"></p>
+                    <p>Ingrese el precio <input type="number" name="price" [(ngModel)]="product.price"></p>
+                    <button class="btn btn-success" (click)="addProduct(product)">Añadir</button>
+                    <button class="btn btn-warning" (click)="modifyProduct(product)">Modificar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

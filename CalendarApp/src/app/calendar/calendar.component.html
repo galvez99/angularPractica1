@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="task-list">
+      <div class="task-item" *ngFor="let task of tasks">
+        <div class="task-header">
+          <h3>{{ task.name }}</h3>
+        </div>
+        <div class="task-body">
+          <p><strong>Descripción:</strong> {{ task.description }}</p>
+          <p><strong>Fecha de Inicio:</strong> {{ task.startDate | date }}</p>
+          <p><strong>Fecha de Finalización:</strong> {{ task.endDate | date }}</p>
+          <p><strong>Asignatura:</strong> {{ task.subject }}</p>
+          <p><strong>Persona Asignada:</strong> {{ task.assignedPerson }}</p>
+          <p><strong>Tiempo Estimado:</strong> {{ task.durationTime }}</p>
+          <p><strong>Tiempo Real:</strong> {{ task.realTime }}</p>
+        </div>
+        <div class="task-footer">
+          <div class="button-container">
+            <button class="action-button" (click)="startTask(task)">Empezar</button>
+            <button class="action-button" (click)="finishTask(task)">Terminar</button>
+            <button class="action-button" (click)="deleteTask(task)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="task-form">
+    <form #taskForm="ngForm" (ngSubmit)="addTask(task)">
+      <div class="form-group">
+        <label for="taskId">ID:</label>
+        <input type="number" class="form-control" id="taskId" name="taskId" [(ngModel)]="task.id" required>
+      </div>
+      <div class="form-group">
+        <label for="taskName">Nombre:</label>
+        <input type="text" class="form-control" id="taskName" name="taskName" [(ngModel)]="task.name" required>
+      </div>
+      <div class="form-group">
+        <label for="taskDescription">Descripción:</label>
+        <textarea class="form-control" id="taskDescription" name="taskDescription" [(ngModel)]="task.description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="startDate">Fecha de Inicio:</label>
+        <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="task.startDate" required>
+      </div>
+      <div class="form-group">
+        <label for="endDate">Fecha de Finalización:</label>
+        <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="task.endDate" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Asignatura:</label>
+        <input type="text" class="form-control" id="subject" name="subject" [(ngModel)]="task.subject" required>
+      </div>
+      <div class="form-group">
+        <label for="assignedPerson">Persona Asignada:</label>
+        <input type="text" class="form-control" id="assignedPerson" name="assignedPerson" [(ngModel)]="task.assignedPerson" required>
+      </div>
+      <div class="form-group">
+        <label for="durationTime">Tiempo Estimado:</label>
+        <input type="number" class="form-control" id="durationTime" name="durationTime" [(ngModel)]="task.durationTime" required>
+      </div>
+      <div class="form-group">
+        <label for="realTime">Tiempo Real:</label>
+        <input type="number" class="form-control" id="realTime" name="realTime" [(ngModel)]="task.realTime">
+      </div>
+      <button type="submit" class="add-button">Add Task</button>
+    </form>
+  </div>
+  
